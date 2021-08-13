@@ -1,31 +1,15 @@
 <footer class="mt-5" *ngIf="(user$ | async) as user">
-    <div class="fixed-bottom bg-primary p-2">
+    <div class="fixed-bottom p-2" style="background-color: lightblue;">
         <div class="container">
             <div class="row text-center">
                 <div class="col-6">
                     <a [routerLink]="['']">
-                        <i class="fa fa-home fa-2x" style="color: white">
-                            <span 
-                                style="
-                                    font-size: 20px; 
-                                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                                    ">
-                                Perfil
-                            </span>
-                        </i>
+                        <i class="fa fa-home fa-2x"></i>
                     </a>
                 </div>
                 <div class="col-6">
                     <a [routerLink]="['p', 'add']">
-                        <i class="fa fa-plus-circle fa-2x" style="color: white">
-                            <span 
-                            style="
-                                font-size: 20px; 
-                                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                                ">
-                                Adicionar foto
-                            </span>
-                        </i>
+                        <i class="fa fa-plus-circle fa-2x"></i>
                     </a>
                 </div>
             </div>

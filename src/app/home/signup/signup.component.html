@@ -1,132 +1,130 @@
-    
-<div style="margin-top: -15vh;">
-    <h4 class="text-center">Cadastro</h4>
 
-    <form 
-        [formGroup]="signupForm" 
-        autocomplete="off"
-        class="form col-9 mx-auto"
-        (submit)="register()">
+<h4 class="text-center">Cadastro</h4>
 
-        <div class="form-group">
-            <input #usernameInput
-                formControlName="userName" 
-                class="form-control" 
-                placeholder="Nome de usuário" 
-                autocomplete="off"
-                autofocus >
-        </div>
+<form 
+    [formGroup]="signupForm" 
+    autocomplete="off"
+    class="form col-9 mx-auto"
+    (submit)="register()">
 
-
-        <ap-vmessage 
-            *ngIf="signupForm.get('userName').errors?.required"
-            title="O nome de usuário é obrigatório!"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('userName').errors?.lowerCase"
-            title="O nome de usuário deve começar com letras minúsculas"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('userName').errors?.minlength"
-        title="O nome de usuário deve ter no mínimo 2 caracteres"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('userName').errors?.maxlength"
-            title="O nome de usuário pode ter no máximo 30 caracteres"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('userName').errors?.usernameTaken"
-            title="Nome de usuário indisponível"></ap-vmessage>
-
-        <small *ngIf="signupForm.get('userName').valid" class="text-success d-block mb-3">Usuário disponível</small>
-
-        <div class="form-group">
-            <input  
-                formControlName="fullName" 
-                class="form-control" 
-                placeholder="Nome completo" 
-                autocomplete="off"
-                autofocus >
-        </div>
-
-        <ap-vmessage 
-            *ngIf="signupForm.get('fullName').errors?.required"
-            title="Nome é obrigatório!"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('fullName').errors?.minlength"
-            title="Nome deve ter no mínimo 2 caracteres"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('fullName').errors?.maxlength"
-            title="Nome pode ter no máximo 40 caracteres"></ap-vmessage>
-
-        <div class="form-group">
-            <input 
-                formControlName="email" 
-                class="form-control" 
-                placeholder="Email" 
-                autocomplete="off"
-                autofocus >
-        </div>
-
-
-        <ap-vmessage 
-            *ngIf="signupForm.get('email').errors?.required"
-            title="Email é obrigatório!"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('email').errors?.email"
-            title="Email inválido"></ap-vmessage>
-
-        <div class="form-group">
-            <input 
-                formControlName="password" 
-                class="form-control" 
-                type="password" 
-                placeholder="Senha" 
-                autofocus >
-        </div>
-
-        <ap-vmessage 
-            *ngIf="signupForm.get('password').errors?.required"
-            title="Senha é obrigatória!"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('password').errors?.minlength"
-            title="A senha deve ter no mínimo 2 caracteres"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('password').errors?.maxlength"
-            title="A senha pode ter no máximo 14 caracteres"></ap-vmessage>
-
-        <div class="form-group">
-            <input 
-                formControlName="confirmPassword" 
-                class="form-control" 
-                type="password" 
-                placeholder="Confirme a senha" 
-                autofocus >
-        </div>
-
-        <ap-vmessage 
-            *ngIf="signupForm.get('confirmPassword').errors?.required"
-            title="A confirmação de senha é obrigatória!"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('confirmPassword').errors?.minlength"
-            title="A confirmação de senha deve ter no mínimo 2 caracteres"></ap-vmessage>
-        <ap-vmessage 
-            *ngIf="signupForm.get('confirmPassword').errors?.maxlength"
-            title="A confirmação de senha pode ter no máximo 14 caracteres"></ap-vmessage>
-
-        <div>
-            <button 
-                [disabled]="signupForm.invalid || signupForm.pending"
-                type="submit" 
-                class="btn btn-primary btn-block" >
-                Cadastrar
-            </button>
-        </div>
-
-    </form>
-
-    <div class="text-center">
-        <p class="p-3">
-            Já é um usuário?
-            <a [routerLink]="['']" style="color: blue; font-weight: bold;">
-                Entrar
-            </a>
-        </p>
+    <div class="form-group">
+        <input #usernameInput
+            formControlName="userName" 
+            class="form-control" 
+            placeholder="Nome de usuário" 
+            autocomplete="off"
+            autofocus >
     </div>
+
+
+    <ap-vmessage 
+        *ngIf="signupForm.get('userName').errors?.required"
+        title="O nome de usuário é obrigatório!"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('userName').errors?.lowerCase"
+        title="O nome de usuário deve começar com letras minúsculas"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('userName').errors?.minlength"
+    title="O nome de usuário deve ter no mínimo 2 caracteres"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('userName').errors?.maxlength"
+        title="O nome de usuário pode ter no máximo 30 caracteres"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('userName').errors?.usernameTaken"
+        title="Nome de usuário indisponível"></ap-vmessage>
+
+    <small *ngIf="signupForm.get('userName').valid" class="text-success d-block mb-3">Usuário disponível</small>
+
+    <div class="form-group">
+        <input  
+            formControlName="fullName" 
+            class="form-control" 
+            placeholder="Nome completo" 
+            autocomplete="off"
+            autofocus >
+    </div>
+
+    <ap-vmessage 
+        *ngIf="signupForm.get('fullName').errors?.required"
+        title="Nome é obrigatório!"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('fullName').errors?.minlength"
+        title="Nome deve ter no mínimo 2 caracteres"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('fullName').errors?.maxlength"
+        title="Nome pode ter no máximo 40 caracteres"></ap-vmessage>
+
+    <div class="form-group">
+        <input 
+            formControlName="email" 
+            class="form-control" 
+            placeholder="Email" 
+            autocomplete="off"
+            autofocus >
+    </div>
+
+
+    <ap-vmessage 
+        *ngIf="signupForm.get('email').errors?.required"
+        title="Email é obrigatório!"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('email').errors?.email"
+        title="Email inválido"></ap-vmessage>
+
+    <div class="form-group">
+        <input 
+            formControlName="password" 
+            class="form-control" 
+            type="password" 
+            placeholder="Senha" 
+            autofocus >
+    </div>
+
+    <ap-vmessage 
+        *ngIf="signupForm.get('password').errors?.required"
+        title="Senha é obrigatória!"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('password').errors?.minlength"
+        title="A senha deve ter no mínimo 2 caracteres"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('password').errors?.maxlength"
+        title="A senha pode ter no máximo 14 caracteres"></ap-vmessage>
+
+    <div class="form-group">
+        <input 
+            formControlName="confirmPassword" 
+            class="form-control" 
+            type="password" 
+            placeholder="Confirme a senha" 
+            autofocus >
+    </div>
+
+    <ap-vmessage 
+        *ngIf="signupForm.get('confirmPassword').errors?.required"
+        title="A confirmação de senha é obrigatória!"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('confirmPassword').errors?.minlength"
+        title="A confirmação de senha deve ter no mínimo 2 caracteres"></ap-vmessage>
+    <ap-vmessage 
+        *ngIf="signupForm.get('confirmPassword').errors?.maxlength"
+        title="A confirmação de senha pode ter no máximo 14 caracteres"></ap-vmessage>
+
+    <div>
+        <button 
+            [disabled]="signupForm.invalid || signupForm.pending"
+            type="submit" 
+            class="btn btn-primary btn-block" >
+            Cadastrar
+        </button>
+    </div>
+
+</form>
+
+<div class="text-center">
+    <p class="p-3">
+        Já é um usuário?
+        <a [routerLink]="['']" style="color: blue; font-weight: bold;">
+            Entrar
+        </a>
+    </p>
 </div>
