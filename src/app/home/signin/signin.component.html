@@ -1,0 +1,55 @@
+<h4 class="text-center">Login</h4>
+
+<form 
+    [formGroup]="loginForm" 
+    autocomplete="off"
+    class="form col-9 mx-auto"
+    (submit)="login()">
+
+    <div class="form-group">
+        <input 
+            #userInput
+            formControlName="user" 
+            class="form-control" 
+            placeholder="Nome de usuário" 
+            autocomplete="off"
+            autofocus >
+    </div>
+
+
+    <ap-vmessage 
+        *ngIf="loginForm.get('user').errors?.required"
+        title="Usuário é obrigatório!"></ap-vmessage>
+    
+    <div class="form-group">
+        <input 
+            formControlName="password" 
+            class="form-control" 
+            type="password" 
+            placeholder="Senha" 
+            autofocus >
+    </div>
+
+    <ap-vmessage 
+        *ngIf="loginForm.get('password').errors?.required"
+        title="Senha é obrigatória!"></ap-vmessage>
+
+    <div>
+        <button 
+            [disabled]="loginForm.invalid"
+            type="submit" 
+            class="btn btn-primary btn-block" >
+            Login
+        </button>
+    </div>
+
+</form>
+
+<div class="text-center">
+    <p class="p-3">
+        Ainda não é um usuário? 
+        <a [routerLink]="['register']" style="color: blue; font-weight: bold;">
+            Cadastre-se
+        </a>
+    </p>
+</div>

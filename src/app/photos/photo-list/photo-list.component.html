@@ -1,0 +1,15 @@
+<div class="container">
+    
+    <ap-search 
+        (onTyping)="filter = $event" [value]="filter">
+    </ap-search>
+
+    <ap-photos 
+        [listaFotos]="photos | filterByDescription: filter">
+    </ap-photos>
+
+    <ap-load-button 
+        [hasMore]="hasMore" 
+        (click)="load()">
+    </ap-load-button>
+</div>
