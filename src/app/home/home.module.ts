@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { PhotoModule } from '../photos/photo/photo.module';
 
 import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 import { HomeComponent } from './home.component';
@@ -22,6 +23,7 @@ import { SignUpService } from './signup/signup.service';
         VMessageModule,
         RouterModule,
         HomeRoutingModule,
+        PhotoModule
     ],
     providers: [
         SignUpService,

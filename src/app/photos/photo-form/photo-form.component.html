@@ -1,3 +1,61 @@
-<p>
-  photo-form works!
-</p>
+<div class="container" style="display: flex; height: calc(100vh - 105px); margin-top: 56px;">
+  <form 
+    [formGroup]="photoForm" 
+    class="row" 
+    style="align-items: center; flex: 1"
+    (submit)="upload()">
+
+    <div class="col-md-6 text-center">
+
+      <div class="form-group" *ngIf="!preview; else previewDiv">
+        <button onOpenClick type="button" (click)="fileInput.click()" class="btn btn-primary">
+          <i class="fa fa-image fa-4x align-middle"></i>
+        </button>
+        <input #fileInput
+          hidden
+          formControlName="file" 
+          type="file" 
+          accept="image/*" 
+          class="mb-2"
+          (change)="handleFile($event.target.files[0])">
+        <ap-vmessage 
+          title="Selecione uma imagem"
+          *ngIf="photoForm.get('file').errors?.required"></ap-vmessage>
+      </div>
+
+      <ng-template #previewDiv>
+        <ap-photo title="Preview" [url]="preview"></ap-photo>
+      </ng-template>
+
+    </div>
+    
+
+    <div class="col-md-6 p-2">
+      <div class="form-group">
+        <textarea 
+          formControlName="description"
+          class="form-control form-control-sm"
+          rows="5" 
+          placeholder="photo description"></textarea>
+          <ap-vmessage 
+            title="O limite de caracteres é 300"
+            *ngIf="photoForm.get('description').errors?.maxlength"></ap-vmessage>
+      </div>
+
+      <div class="form-group">
+        <label class="text-muted">
+          Allow comments
+          <input formControlName="allowComments" type="checkbox">
+        </label>
+      </div>
+
+      <button [disabled]="photoForm.invalid" type="submit" class="btn btn-success btn-block">
+        Upload
+      </button>
+
+      <a [routerLink]="['']" class="btn btn-primary btn-block">
+        <span style="color: white;">Cancel</span>
+      </a>
+    </div>
+  </form>
+</div>

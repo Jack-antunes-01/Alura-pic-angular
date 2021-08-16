@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
-import { TokenService } from '../token/token.service';
+import { environment } from 'src/environments/environment';
 import { UserService } from '../user/user.service';
 
-const API = "http://localhost:3000"
+const API = environment.ApiUrl;
 
 @Injectable({
   providedIn: 'root'
