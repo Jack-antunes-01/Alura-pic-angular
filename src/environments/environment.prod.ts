@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  ApiUrl: 'http://teste:3000',
 };
